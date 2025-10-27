@@ -39,7 +39,13 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">6</integer>
+    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.1</item>
+
+    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDoze">128</integer>
+    <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.5</item>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
