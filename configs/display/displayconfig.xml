@@ -24,4 +24,9 @@
         <timeMinSecs>60</timeMinSecs>          // Minimum time remaining required to switch
         </timing>                              //   HBM on for.
     </highBrightnessMode>
+
+    <screenBrightnessRampFastDecrease>0.5</screenBrightnessRampFastDecrease>
+    <screenBrightnessRampFastIncrease>0.5</screenBrightnessRampFastIncrease>
+    <screenBrightnessRampSlowDecrease>0.04</screenBrightnessRampSlowDecrease>
+    <screenBrightnessRampSlowIncrease>0.05</screenBrightnessRampSlowIncrease>
 </displayConfiguration>
