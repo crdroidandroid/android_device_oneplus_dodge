@@ -18,4 +18,6 @@
     <!-- Location on the screen of the center of the physical power button. -->
     <dimen name="physical_power_button_center_screen_location_y">1000px</dimen>
 
+    <!-- Udfps fingerprint animation -->
+    <dimen name="udfps_animation_offset">-12dp</dimen>
 </resources>
