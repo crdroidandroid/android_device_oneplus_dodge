@@ -415,4 +415,7 @@
          -->
     <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
 
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
 </resources>
