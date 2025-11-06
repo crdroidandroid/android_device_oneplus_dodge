@@ -10,7 +10,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Alert slider
 PRODUCT_PACKAGES += \
-    KeyHandler \
+    DeviceSettings \
     tri-state-key-calibrate
 
 # Audio
@@ -41,7 +41,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     FrameworksResTargetEuicc \
-    KeyHandlerResTarget \
     OPlusFrameworksResTarget \
     OPlusSettingsProviderResTarget \
     OPlusSettingsResTarget \
