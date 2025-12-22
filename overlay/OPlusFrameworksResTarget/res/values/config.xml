@@ -122,52 +122,42 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>2.0487</item>
-        <item>4.8394</item>
-        <item>15.2619</item>
-        <item>33</item>
-        <item>49</item>
-        <item>62.95</item>
-        <item>76.46</item>
-        <item>84.38</item>
-        <item>89.51</item>
-        <item>100.34</item>
-        <item>109.48</item>
-        <item>115</item>
-        <item>123.86</item>
-        <item>129.18</item>
-        <item>138.07</item>
-        <item>148.62</item>
-        <item>175.84</item>
-        <item>234.9</item>
-        <item>279</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
-        <item>380</item>
-        <item>400</item>
-        <item>420</item>
-        <item>440</item>
-        <item>460</item>
-        <item>480</item>
-        <item>500</item>
-        <item>520</item>
-        <item>540</item>
-        <item>560</item>
-        <item>580</item>
-        <item>600</item>
-        <item>620</item>
-        <item>660</item>
-        <item>700</item>
-        <item>740</item>
-        <item>780</item>
-        <item>820</item>
-        <item>860</item>
-        <item>900</item>
-        <item>940</item>
-        <item>960</item>
-        <item>1000</item>
+        <item>20.0</item>    <!--      0 - 1     -->
+        <item>30.0</item>   <!--      1 - 6     -->
+        <item>50.0</item>   <!--      6 - 10    -->
+        <item>100.0</item>  <!--     10 - 20    -->
+        <item>140.0</item>  <!--     20 - 30    -->
+        <item>160.0</item>  <!--     30 - 40    -->
+        <item>180.0</item>  <!--     40 - 50    -->
+        <item>200.0</item>  <!--     50 - 60    -->
+        <item>230.0</item>  <!--     60 - 70    -->
+        <item>240.0</item>  <!--     70 - 80    -->
+        <item>250.0</item>  <!--     80 - 90    -->
+        <item>260.0</item>  <!--     90 - 100   -->
+        <item>270.0</item>  <!--    100 - 150   -->
+        <item>280.0</item>  <!--    150 - 200   -->
+        <item>290.0</item>  <!--    200 - 300   -->
+        <item>300.0</item>  <!--    300 - 400   -->
+        <item>310.0</item>  <!--    400 - 500   -->
+        <item>320.0</item>  <!--    500 - 600   -->
+        <item>330.0</item>  <!--    600 - 700   -->
+        <item>340.0</item>  <!--    700 - 800   -->
+        <item>360.0</item>  <!--    800 - 900   -->
+        <item>380.0</item>  <!--    900 - 1000  -->
+        <item>420.0</item>  <!--   1000 - 1200  -->
+        <item>460.0</item>  <!--   1200 - 1400  -->
+        <item>500.0</item>  <!--   1400 - 1600  -->
+        <item>540.0</item>  <!--   1600 - 1700  -->
+        <item>580.0</item>  <!--   1700 - 1800  -->
+        <item>600.0</item>  <!--   1800 - 1900  -->
+        <item>660.0</item>  <!--   1900 - 2000  -->
+        <item>680.0</item>  <!--   2000 - 4000  -->
+        <item>700.0</item>  <!--   4000 - 7000  -->
+        <item>720.0</item>  <!--   7000 - 10000 -->
+        <item>740.0</item>  <!--  10000 - 15000 -->
+        <item>760.0</item>  <!--  15000 - 30000 -->
+        <item>780.0</item>  <!--  30000 - 40000 -->
+        <item>800.0</item>  <!--      40000+    -->
     </array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
