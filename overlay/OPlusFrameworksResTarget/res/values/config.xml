@@ -69,50 +69,32 @@
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
+        <item>2</item>
+        <item>3</item>
         <item>4</item>
+        <item>8</item>
         <item>12</item>
+        <item>15</item>
         <item>20</item>
-        <item>28</item>
-        <item>47</item>
-        <item>63</item>
-        <item>86</item>
-        <item>150</item>
-        <item>220</item>
-        <item>270</item>
-        <item>360</item>
-        <item>420</item>
-        <item>510</item>
-        <item>620</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3100</item>
-        <item>3988</item>
-        <item>5018</item>
-        <item>6232</item>
-        <item>7648</item>
-        <item>9280</item>
-        <item>11146</item>
-        <item>13261</item>
-        <item>15640</item>
-        <item>18302</item>
-        <item>21260</item>
-        <item>24532</item>
-        <item>28133</item>
-        <item>32080</item>
-        <item>36388</item>
-        <item>41073</item>
-        <item>46153</item>
-        <item>51642</item>
-        <item>63912</item>
-        <item>78015</item>
-        <item>94076</item>
-        <item>112226</item>
-        <item>132592</item>
-        <item>155302</item>
-        <item>180486</item>
-        <item>208271</item>
-        <item>223180</item>
-        <item>255108</item>
+        <item>33</item>
+        <item>55</item>
+        <item>90</item>
+        <item>148</item>
+        <item>245</item>
+        <item>403</item>
+        <item>665</item>
+        <item>1097</item>
+        <item>1808</item>
+        <item>3000</item>
+        <item>6000</item>
+        <item>9000</item>
+        <item>10000</item>
+        <item>14000</item>
+        <item>20000</item>
+        <item>25000</item>
+        <item>31000</item>
+        <item>51000</item>
+        <item>81000</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -128,189 +110,34 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>20.0</item>    <!--      0 - 1     -->
-        <item>30.0</item>   <!--      1 - 6     -->
-        <item>50.0</item>   <!--      6 - 10    -->
-        <item>100.0</item>  <!--     10 - 20    -->
-        <item>140.0</item>  <!--     20 - 30    -->
-        <item>160.0</item>  <!--     30 - 40    -->
-        <item>180.0</item>  <!--     40 - 50    -->
-        <item>200.0</item>  <!--     50 - 60    -->
-        <item>230.0</item>  <!--     60 - 70    -->
-        <item>240.0</item>  <!--     70 - 80    -->
-        <item>250.0</item>  <!--     80 - 90    -->
-        <item>260.0</item>  <!--     90 - 100   -->
-        <item>270.0</item>  <!--    100 - 150   -->
-        <item>280.0</item>  <!--    150 - 200   -->
-        <item>290.0</item>  <!--    200 - 300   -->
-        <item>300.0</item>  <!--    300 - 400   -->
-        <item>310.0</item>  <!--    400 - 500   -->
-        <item>320.0</item>  <!--    500 - 600   -->
-        <item>330.0</item>  <!--    600 - 700   -->
-        <item>340.0</item>  <!--    700 - 800   -->
-        <item>360.0</item>  <!--    800 - 900   -->
-        <item>380.0</item>  <!--    900 - 1000  -->
-        <item>420.0</item>  <!--   1000 - 1200  -->
-        <item>460.0</item>  <!--   1200 - 1400  -->
-        <item>500.0</item>  <!--   1400 - 1600  -->
-        <item>540.0</item>  <!--   1600 - 1700  -->
-        <item>580.0</item>  <!--   1700 - 1800  -->
-        <item>600.0</item>  <!--   1800 - 1900  -->
-        <item>660.0</item>  <!--   1900 - 2000  -->
-        <item>680.0</item>  <!--   2000 - 4000  -->
-        <item>700.0</item>  <!--   4000 - 7000  -->
-        <item>720.0</item>  <!--   7000 - 10000 -->
-        <item>740.0</item>  <!--  10000 - 15000 -->
-        <item>760.0</item>  <!--  15000 - 30000 -->
-        <item>780.0</item>  <!--  30000 - 40000 -->
-        <item>800.0</item>  <!--      40000+    -->
-    </array>
-
-    <!-- An array describing the screen's backlight values corresponding to the brightness
-         values in the config_screenBrightnessNits array.
-
-         This array should be equal in size to config_screenBrightnessBacklight. -->
-    <integer-array name="config_screenBrightnessBacklight">
-        <item>0</item>
-        <item>4</item>
-        <item>8</item>
-        <item>12</item>
-        <item>16</item>
-        <item>20</item>
-        <item>24</item>
-        <item>28</item>
-        <item>32</item>
-        <item>36</item>
-        <item>40</item>
-        <item>44</item>
-        <item>48</item>
-        <item>52</item>
-        <item>56</item>
-        <item>60</item>
-        <item>64</item>
-        <item>68</item>
-        <item>72</item>
-        <item>76</item>
-        <item>80</item>
-        <item>84</item>
-        <item>88</item>
-        <item>92</item>
-        <item>96</item>
-        <item>100</item>
-        <item>104</item>
-        <item>108</item>
-        <item>112</item>
-        <item>116</item>
-        <item>120</item>
-        <item>123</item>
-        <item>127</item>
-        <item>131</item>
-        <item>135</item>
-        <item>139</item>
-        <item>143</item>
-        <item>147</item>
-        <item>151</item>
-        <item>155</item>
-        <item>159</item>
-        <item>163</item>
-        <item>167</item>
-        <item>171</item>
-        <item>175</item>
-        <item>179</item>
-        <item>183</item>
-        <item>187</item>
-        <item>191</item>
-        <item>195</item>
-        <item>199</item>
-        <item>203</item>
-        <item>207</item>
-        <item>211</item>
-        <item>215</item>
-        <item>219</item>
-        <item>223</item>
-        <item>227</item>
-        <item>231</item>
-        <item>235</item>
-        <item>239</item>
-        <item>243</item>
-        <item>246</item>
-        <item>251</item>
-        <item>255</item>
-    </integer-array>
-
-    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
-         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
-         should be measured with an all white image while the display is in the fully on state.
-         Note that this value should *not* reflect the maximum brightness value for any high
-         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
-
-         This array should be equal in size to config_screenBrightnessBacklight -->
-    <array name="config_screenBrightnessNits">
-        <item>0.0</item>
-        <item>2.87</item>
-        <item>2.92</item>
-        <item>3.1</item>
-        <item>3.57</item>
-        <item>4.25</item>
-        <item>5.17</item>
-        <item>6.25</item>
-        <item>7.46</item>
-        <item>9.01</item>
-        <item>10.72</item>
-        <item>12.79</item>
-        <item>14.79</item>
-        <item>17.25</item>
-        <item>20.09</item>
-        <item>22.73</item>
-        <item>25.75</item>
-        <item>29.04</item>
-        <item>32.47</item>
-        <item>36.59</item>
-        <item>40.5</item>
-        <item>44.76</item>
-        <item>49.59</item>
-        <item>54.28</item>
-        <item>58.76</item>
-        <item>63.89</item>
-        <item>69.43</item>
-        <item>75.25</item>
-        <item>81.14</item>
-        <item>87.62</item>
-        <item>94.04</item>
-        <item>98.43</item>
-        <item>105.66</item>
-        <item>113.0</item>
-        <item>121.22</item>
-        <item>129.54</item>
-        <item>136.8</item>
-        <item>146.37</item>
-        <item>154.61</item>
-        <item>163.9</item>
-        <item>174.21</item>
-        <item>182.27</item>
-        <item>194.45</item>
-        <item>205.89</item>
-        <item>215.12</item>
-        <item>228.27</item>
-        <item>238.21</item>
-        <item>250.34</item>
-        <item>263.42</item>
-        <item>273.78</item>
-        <item>287.67</item>
-        <item>300.67</item>
-        <item>313.06</item>
-        <item>327.17</item>
-        <item>340.72</item>
-        <item>354.25</item>
-        <item>368.99</item>
-        <item>383.17</item>
-        <item>398.86</item>
-        <item>415.52</item>
-        <item>431.63</item>
-        <item>448.22</item>
-        <item>459.04</item>
-        <item>482.52</item>
-        <item>498.77</item>
+        <item>5.139055</item>      <!--  0 - 1 -->
+        <item>9.962018965</item>   <!--  1 - 2 -->
+        <item>18.34822964</item>   <!--  2 - 3 -->
+        <item>21.55068128</item>   <!--  3 - 4 -->
+        <item>24.0167788</item>    <!--  4 - 8 -->
+        <item>32.5</item>          <!--  8 - 12 -->
+        <item>46</item>            <!--  12 - 15 -->
+        <item>53.26923077</item>   <!--  15 - 20 -->
+        <item>54.61538462</item>   <!--  20 - 33 -->
+        <item>58.11538462</item>   <!--  33 - 55 -->
+        <item>62.1394</item>       <!--  55 - 90 -->
+        <item>67.13133333</item>   <!--  90 - 148 -->
+        <item>79.67614115</item>   <!--  148 - 245 -->
+        <item>98.04727274</item>   <!--  245 - 403 -->
+        <item>125.1221991</item>   <!--  403 - 665 -->
+        <item>161.6875093</item>   <!--  665 - 1097 -->
+        <item>208.4885553</item>   <!--  1097 - 1808 -->
+        <item>264.8221315</item>   <!--  1808 - 3000 -->
+        <item>328.5869521</item>   <!--  3000 - 6000 -->
+        <item>627.4315413</item>   <!--  6000 - 9000 -->
+        <item>826.8584866</item>   <!--  9000 - 10000 -->
+        <item>867.85582302</item>  <!-- 10000 - 14000 -->
+        <item>1041.39662279</item> <!-- 14000 - 20000 -->
+        <item>1227.52633489</item> <!-- 20000 - 25000 -->
+        <item>1331.28933608</item> <!-- 25000 - 31000 -->
+        <item>1414.57566867</item> <!-- 31000 - 51000 -->
+        <item>1553.22826182</item> <!-- 51000 - 81000 -->
+        <item>1614.01031782</item> <!-- 81000+  -->
     </array>
 
     <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
@@ -325,7 +152,32 @@
          level[n] <= value < level[n+1]  n+1
          level[MAX] <= value             MAX+1 -->
     <integer-array name="config_ambientThresholdLevels">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
         <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
     </integer-array>
 
     <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
@@ -335,8 +187,33 @@
          the screen brightness is recalculated. See the config_ambientThresholdLevels
          description for how the constraint value is chosen. -->
     <integer-array name="config_ambientBrighteningThresholds">
-        <item>600</item>
-        <item>300</item>
+        <item>5186</item>
+        <item>4333</item>
+        <item>3666</item>
+        <item>2999</item>
+        <item>2759</item>
+        <item>2519</item>
+        <item>2279</item>
+        <item>2039</item>
+        <item>1799</item>
+        <item>799</item>
+        <item>527</item>
+        <item>499</item>
+        <item>470</item>
+        <item>517</item>
+        <item>565</item>
+        <item>612</item>
+        <item>660</item>
+        <item>708</item>
+        <item>742</item>
+        <item>636</item>
+        <item>582</item>
+        <item>549</item>
+        <item>369</item>
+        <item>294</item>
+        <item>269</item>
+        <item>220</item>
+        <item>220</item>
     </integer-array>
 
     <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
@@ -346,8 +223,33 @@
          the screen brightness is recalculated. See the config_ambientThresholdLevels
          description for how the constraint value is chosen. -->
     <integer-array name="config_ambientDarkeningThresholds">
+        <item>525</item>
+        <item>683</item>
+        <item>666</item>
+        <item>650</item>
+        <item>640</item>
+        <item>630</item>
+        <item>620</item>
+        <item>610</item>
         <item>600</item>
-        <item>300</item>
+        <item>500</item>
+        <item>500</item>
+        <item>440</item>
+        <item>385</item>
+        <item>382</item>
+        <item>379</item>
+        <item>376</item>
+        <item>373</item>
+        <item>371</item>
+        <item>367</item>
+        <item>387</item>
+        <item>397</item>
+        <item>403</item>
+        <item>380</item>
+        <item>345</item>
+        <item>333</item>
+        <item>283</item>
+        <item>283</item>
     </integer-array>
 
     <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
