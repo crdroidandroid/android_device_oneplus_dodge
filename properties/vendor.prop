@@ -1,9 +1,11 @@
 # ALS
 vendor.sensors.als_correction.grabrect=997 132 1062 209
 vendor.sensors.als_correction.bias=0
-vendor.sensors.als_correction.rgbw_max_lux=117.0 261.0 81.0 423.0
 vendor.sensors.als_correction.grayscale_weights=0.25 0.57 0.18
 vendor.sensors.als_correction.sensor_inverse_gain=1.0 1.0 1.0 1.0
+vendor.sensors.als_correction.brightness_breakpoint=3500.0
+vendor.sensors.als_correction.brightness_poly0=0.00004279 0.0097813 4.8116
+vendor.sensors.als_correction.brightness_poly1=0.0 0.9493 -2785.597
 
 # Bluetooth
 bluetooth.device.default_name=OnePlus 13
