@@ -22,6 +22,9 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 3168
 TARGET_SCREEN_WIDTH := 1440
 
+# Camera
+$(call inherit-product, vendor/oneplus/camera/opluscamera.mk)
+
 # Display
 PRODUCT_PACKAGES += \
     OplusLtpo

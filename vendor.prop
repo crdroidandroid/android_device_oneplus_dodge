@@ -10,6 +10,10 @@ vendor.sensors.als_correction.brightness_poly1=0.0 0.9493 -2785.597
 # Bluetooth
 bluetooth.device.default_name=OnePlus 13
 
+# Camera
+ro.vendor.oplus.market.enname=OnePlus 13
+ro.vendor.oplus.market.name=OnePlus 13
+
 # Device name
 ro.product.marketname=OnePlus 13
 

@@ -1,0 +1,23 @@
+// libapsfixup — runtime corrector for the APS turbo P010 chroma/conversion bug on dodge.
+// Installs to /odm/lib64 and is pulled into com.oplus.camera as a DT_NEEDED of libAlgoProcess.so
+// (added via extract-files.py .add_needed). Fixes the bug purely by GOT redirection (dlsym +
+// p010 JUMP_SLOTs) -- no code patching -- so it needs no execmem/execmod.
+cc_library_shared {
+    name: "libapsfixup",
+    srcs: ["apsfixup.cpp"],
+    shared_libs: ["liblog"],
+    header_libs: [],
+    device_specific: true,      // -> /odm/lib64
+    compile_multilib: "64",
+    cppflags: [
+        "-std=c++17",
+        "-Wall",
+        "-Wno-unused-parameter",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    // keep symbols for logcat triage of the GOT-hook install.
+    strip: {
+        none: true,
+    },
+}

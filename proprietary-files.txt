@@ -881,6 +881,7 @@ odm/lib64/libCS.so
 odm/lib64/libCaptureBokeh.so
 odm/lib64/libDocRectification.so
 odm/lib64/libEIS.so
+odm/lib64/libEISLive.so
 odm/lib64/libFDClite.so
 odm/lib64/libFaceBeautyJni.so
 odm/lib64/libFaceBeautyPre.so
@@ -960,6 +961,7 @@ odm/lib64/libexif-jpeg-aps.so
 odm/lib64/libextendfile.so
 odm/lib64/libextensionlayer.so
 odm/lib64/libfovctrl.so
+odm/lib64/libfusioninterpolation.arcsoft.so
 odm/lib64/libhwconfigurationutil.so
 odm/lib64/libhybridraw_datas.so
 odm/lib64/libhybridraw_tuningparams.so
@@ -1307,6 +1309,8 @@ vendor/lib64/libspectre.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libubifocus.so
+vendor/lib64/libui.so:vendor/lib64/libui-stock.so;FIX_SONAME
+vendor/lib64/libutils.so:vendor/lib64/libutils-stock.so;FIX_SONAME
 vendor/lib64/libvideoml.so
 vendor/lib64/vendor.qti.hardware.camera.aon-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so

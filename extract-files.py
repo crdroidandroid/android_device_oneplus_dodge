@@ -17,6 +17,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'device/oneplus/dodge',
     'hardware/oplus',
     'hardware/qcom-caf/sm8750',
     'vendor/oneplus/sm8750-common',
@@ -24,18 +25,25 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
-    'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
-        .regex_replace(r'(enableSWfdForThirdCamUnit += )TRUE', r'\1FALSE')
-        .regex_replace(r'(fdSupport += )TRUE;', r'\1FALSE;'),
     'odm/etc/init/init.camera_process.rc': blob_fixup()
         .regex_replace('    delete_recursion', '    #delete_recursion'),
     'odm/firmware/fastchg/23821/charging_hyper_mode_config.txt': blob_fixup()
         .regex_replace(r"(PROJECT:=)23893", r"\g<1>23821"),
     'odm/lib64/libAlgoProcess.so': blob_fixup()
-        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so')
+        # APS turbo soft/GREEN/crash is now fixed at RUNTIME by libapsfixup.so
+        # (device/oneplus/dodge/apsfixup), loaded via this DT_NEEDED. Root cause: the port's
+        # gralloc/IMapper reports a wrong plane layout for the 4096x3072 P010 capture-output
+        # buffer, so the byte-identical ArcSoft/Algo blobs build a garbage chroma plane. The
+        # interposer corrects, at runtime: (1) ARC_Turbo_RAW_Process output struct chroma plane
+        # ptr = luma + Ysize (was align_up(luma,0) = 4GB), (2) chroma pitch = Y stride (was 0),
+        # (3) p010LSB2MSBNeon length so w4*w5*1.5 == buffer (full Y+UV, no overrun). Turbo runs
+        # normally -> sharp + correct color.
+        .add_needed('libapsfixup.so'),
     (
         'odm/lib64/libAncHumanSegFigureFusion.so',
         'odm/lib64/libEIS.so',
+        'odm/lib64/libEISLive.so',
         'odm/lib64/libHIS.so',
         'odm/lib64/libOPAlgoCamAiBeautyFaceRetouchCn.so',
         'odm/lib64/libOPAlgoCamAiUnifySkin.so',
@@ -55,14 +63,33 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/hw/com.qti.chi.override.so',
         'vendor/lib64/libcamximageformatutils.so',
         'vendor/lib64/libchifeature2.so',
-        'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so',
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
+    (
+        'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so')
+        # convertAndImportBuffer reads the offline-metadata buffer size from the SnapHandle's
+        # aligned_width_in_bytes field (handle+0x1c), but on this build that field holds a bogus
+        # stride (e.g. 512) for the metadata BLOB while the real byte size is in the next field
+        # (aligned_width_in_pixels, handle+0x20). That truncates the metadata copy to 512 bytes
+        # and crashes CamX (MetaBuffer::AllocateBuffer). Patch the load to read +0x20 instead of
+        # +0x1c:  ldr w27,[x21,#0x1c] (bb1e40b9) -> ldr w27,[x21,#0x20] (bb2240b9).
+        # 12-byte anchor = ldr x21,[x12,#0x30]; ldr w27,[x21,#0x1c]; ldr w0,[x21,#0xc].
+        .binary_regex_replace(
+            b'\x95\x19\x40\xf9\xbb\x1e\x40\xb9\xa0\x0e\x40\xb9',
+            b'\x95\x19\x40\xf9\xbb\x22\x40\xb9\xa0\x0e\x40\xb9',
+        ),
     (
         'vendor/lib64/libcamxcoreutils.so',
         'vendor/lib64/libcamxods.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'odm/lib64/libsharebuffer_impl.so': blob_fixup()
+        .replace_needed('libutils.so', 'libutils-stock.so')
+        .replace_needed('libui.so', 'libui-stock.so'),
+    'vendor/lib64/libui-stock.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
