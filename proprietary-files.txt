@@ -1379,6 +1379,12 @@ odm/firmware/fastchg/silicon_p_770_batt_si_loss_config_table.txt
 odm/firmware/fastchg/silicon_p_770_smart_chg_config_table.txt
 odm/firmware/fastchg/smart_chg_config_table.txt
 
+# Display (DisplayColorFeature)
+odm/etc/displaycolorfeaturecfg.xml
+odm/etc/vintf/manifest/manifest_displaycolorfeature_aidl.xml
+odm/lib64/libclstc_color_feature.so
+odm/lib64/libdisplayfossfeature_nature.so
+
 # Display (PanelChaplin)
 odm/etc/PanelChaplin/AA545_P_3_A0005_dsc_cmd_mode_panel_1_100nit.odf
 odm/etc/PanelChaplin/AA545_P_3_A0005_dsc_cmd_mode_panel_1_2nit.odf

@@ -59,6 +59,8 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     (
+        'odm/lib64/libclstc_color_feature.so',
+        'odm/lib64/libdisplayfossfeature_nature.so',
         'vendor/lib64/libcamxcoreutils.so',
         'vendor/lib64/libcamxods.so',
     ): blob_fixup()
