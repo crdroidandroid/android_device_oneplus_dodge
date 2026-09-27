@@ -1385,6 +1385,22 @@ odm/etc/vintf/manifest/manifest_displaycolorfeature_aidl.xml
 odm/lib64/libclstc_color_feature.so
 odm/lib64/libdisplayfossfeature_nature.so
 
+# Display (HWC) - stock SDM stack, required by PanelChaplin/DisplayColorFeature
+odm/etc/display/cwb_weightspos.json
+odm/etc/vintf/manifest/manifest_oplus_cwb_aidl.xml
+vendor/bin/hw/vendor.qti.hardware.display.composer-service;DISABLE_DEPS;REQUIRED=vendor.qti.hardware.display.composer-service.rc,vendor.qti.hardware.display.composer-service.xml
+vendor/lib64/libap_uir_dimming.so
+vendor/lib64/libcwb_qcom_aidl.so
+vendor/lib64/libhistogram.so
+vendor/lib64/libhwcsensor.so
+vendor/lib64/libqdutils.so
+vendor/lib64/libsdedrm.so
+vendor/lib64/libsdmclient.so
+vendor/lib64/libsdmcore.so
+vendor/lib64/libsdmdal.so
+vendor/lib64/libsdmutils.so
+vendor/lib64/vendor.qti.hardware.display.composer3-V1-ndk.so:vendor/lib64/vendor.qti.hardware.display.composer3-V1-ndk_prebuilt.so;FIX_SONAME
+
 # Display (PanelChaplin)
 odm/etc/PanelChaplin/AA545_P_3_A0005_dsc_cmd_mode_panel_1_100nit.odf
 odm/etc/PanelChaplin/AA545_P_3_A0005_dsc_cmd_mode_panel_1_2nit.odf
@@ -1414,6 +1430,20 @@ odm/etc/PanelChaplin/Game_Vivid_Fliter.txt
 odm/etc/PanelChaplin/panelchaplin
 odm/etc/vintf/manifest/vintf_manifext_aidl_panelchaplin.xml
 odm/lib64/libPanelChaplin.so;MODULE_SUFFIX=_odm
+
+# Display (Pixelworks) - dependencies of the stock SDM stack
+vendor/lib64/libpwirisfeature.so
+vendor/lib64/libpwirishal.so
+vendor/lib64/libpwirishalwrapper.so
+vendor/lib64/libpwirishardware_ext.so
+vendor/lib64/vendor.pixelworks.hardware.display-V3-ndk.so
+vendor/lib64/vendor.pixelworks.hardware.display@1.0.so
+vendor/lib64/vendor.pixelworks.hardware.display@1.1.so
+vendor/lib64/vendor.pixelworks.hardware.display@1.2.so
+vendor/lib64/vendor.pixelworks.hardware.feature-V2-ndk.so
+vendor/lib64/vendor.pixelworks.hardware.feature@1.0.so
+vendor/lib64/vendor.pixelworks.hardware.feature@1.1.so
+vendor/lib64/vendor.pixelworks.hardware.feature@1.2.so
 
 # Display calibration data
 odm/etc/display/qdcm_calib_data_AA545_P_3_A0005_dsc_cmd_mode_panel.json

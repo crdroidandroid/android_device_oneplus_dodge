@@ -31,7 +31,11 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('    delete_recursion', '    #delete_recursion'),
     'odm/firmware/fastchg/23821/charging_hyper_mode_config.txt': blob_fixup()
         .regex_replace(r"(PROJECT:=)23893", r"\g<1>23821"),
-    'odm/lib64/libAlgoProcess.so': blob_fixup()
+    (
+        'odm/lib64/libAlgoProcess.so',
+        'vendor/lib64/libpwirishalwrapper.so',
+        'vendor/lib64/libsdmclient.so',
+    ): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     (
         'odm/lib64/libAncHumanSegFigureFusion.so',
@@ -61,10 +65,20 @@ blob_fixups: blob_fixups_user_type = {
     (
         'odm/lib64/libclstc_color_feature.so',
         'odm/lib64/libdisplayfossfeature_nature.so',
+        'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
         'vendor/lib64/libcamxcoreutils.so',
         'vendor/lib64/libcamxods.so',
+        'vendor/lib64/libsdmclient.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    (
+        'vendor/lib64/libcwb_qcom_aidl.so',
+        'vendor/lib64/libhwcsensor.so',
+        'vendor/lib64/libsdmclient.so',
+    ): blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V11-ndk.so', 'vendor.qti.hardware.display.config-V12-ndk.so'),
+    'vendor/bin/hw/vendor.qti.hardware.display.composer-service': blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.composer3-V1-ndk.so', 'vendor.qti.hardware.display.composer3-V1-ndk_prebuilt.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
