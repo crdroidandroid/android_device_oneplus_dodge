@@ -25,6 +25,14 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     OplusLtpo
 
+# Stock composer-service is extracted with DISABLE_DEPS, make sure the
+# libraries it links against that nothing else pulls in get installed.
+PRODUCT_PACKAGES += \
+    libgpu_tonemapper \
+    vendor.qti.hardware.display.aiqe-V2-ndk.vendor \
+    vendor.qti.hardware.display.config-V12-ndk.vendor \
+    vendor.qti.hardware.display.demura-V1-ndk.vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/displayconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946756802996883.xml
 
